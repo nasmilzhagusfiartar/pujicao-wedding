@@ -120,8 +120,12 @@ body {
   color: var(--pink);
 }
 
-.home .couple img {
-  width: 100%;
+.couple img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center 40%; /* 🔥 geser fokus ke bawah */
+  border-radius: 50%;
 }
 
 .home .heart {
@@ -376,6 +380,13 @@ footer li {
   line-height: 0;
 }
 
+.gallery img {
+  width: 100%;
+  height: 400px; /* 🔥 samain tinggi semua */
+  object-fit: cover; /* biar crop, bukan gepeng */
+  border-radius: 8px;
+}
+
 @keyframes rotating {
   from {
     transform: rotate(0);
@@ -455,6 +466,11 @@ footer li {
     width: 100px;
     height: 100px;
   }
+
+  .couple img {
+    width: 120px !important;
+    height: 120px !important;
+  }
 }
 /* Mobile phone */
 @media (max-width: 576px) {
@@ -481,5 +497,10 @@ footer li {
 
   .timeline li .timeline-panel::after {
     top: 31px;
+  }
+
+  .couple img {
+    width: 100px !important;
+    height: 100px !important;
   }
 }
