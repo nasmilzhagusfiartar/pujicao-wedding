@@ -571,6 +571,20 @@
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
+
+      // Close offcanvas when nav link is clicked
+      const offcanvasElement = document.getElementById("offcanvasNavbar");
+      const navLinks = offcanvasElement.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          const offcanvasInstance =
+            bootstrap.Offcanvas.getInstance(offcanvasElement);
+          if (offcanvasInstance) {
+            offcanvasInstance.hide();
+          }
+        });
+      });
     </script>
 
     <script>
